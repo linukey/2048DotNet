@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="yes"?>
+<LUserInfoDataSet xmlns="http://tempuri.org/LUserInfoDataSet.xsd">
+  <userinfo_t>
+    <Id>0</Id>
+    <Name>linukey</Name>
+    <Email>410282618@qq.com</Email>
+    <Phono>18866348205</Phono>
+    <Office>student</Office>
+    <MaxScore>1784</MaxScore>
+    <Flag>true</Flag>
+  </userinfo_t>
+</LUserInfoDataSet>

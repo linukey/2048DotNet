@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LUserInfoDataSet"
+    targetNamespace="http://tempuri.org/LUserInfoDataSet.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/LUserInfoDataSet.xsd"
+    xmlns:mstns="http://tempuri.org/LUserInfoDataSet.xsd"
+    xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="userinfo_t">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+        <xs:element name="Name" type="xs:string" />
+        <xs:element name="Email" type="xs:string" />
+        <xs:element name="Phono" type="xs:string" />
+        <xs:element name="Office" type="xs:string" />
+        <xs:element name="MaxScore" type="xs:string" />
+        <xs:element name="Flag" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

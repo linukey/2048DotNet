@@ -1,0 +1,24 @@
+﻿<Window x:Class="P2048.UI.MaxScore"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:P2048.UI"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Title="MaxScore" Height="300" Width="500">
+    
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/Images/MaxScore.jpg" />
+        </Grid.Background>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <local:ImageButton x:Name="ibnScore" ImagePath="../Resources/Images/niubi.gif" Template="{StaticResource Score}" />
+            <local:ImageButton Width="250" Text="退出" ImagePath="../Resources/Images/start.png" Template="{StaticResource SettingButton}" Click="ImageButton_Click" />
+            <StackPanel.Resources>
+                <Style TargetType="local:ImageButton">
+                    <Setter Property="Focusable" Value="False" />
+                </Style>
+            </StackPanel.Resources>
+        </StackPanel>
+    </Grid>
+</Window>

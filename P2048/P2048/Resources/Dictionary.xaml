@@ -1,0 +1,221 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:P2048"
+                    xmlns:ui="clr-namespace:P2048.UI">
+    <ControlTemplate x:Key="n" TargetType="ui:ImageButton">
+        <Grid Width="100" Height="100" Background="White" Margin="1">
+            <Rectangle Name="rt" />
+            <TextBlock Name="tbk" Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <EventTrigger RoutedEvent="Rectangle.Loaded"> <!--出场动画-->
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation
+                                    Storyboard.TargetName="rt" 
+                                    Storyboard.TargetProperty="Height"
+                                    From="0" To="100" Duration="0:0:0.5" 
+                                    AutoReverse="False" />
+                        <DoubleAnimation
+                                    Storyboard.TargetName="rt" 
+                                    Storyboard.TargetProperty="Width"
+                                    From="0" To="100" Duration="0:0:0.5" 
+                                    AutoReverse="False" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Rectangle.MouseEnter"> <!--鼠标进出动画-->
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation
+                                    Storyboard.TargetName="rt" 
+                                    Storyboard.TargetProperty="Height"
+                                    From="100" To="0" Duration="0:0:0.5" 
+                                    AutoReverse="False" />
+                        <DoubleAnimation
+                                    Storyboard.TargetName="rt" 
+                                    Storyboard.TargetProperty="Width"
+                                    From="100" To="0" Duration="0:0:0.5" 
+                                    AutoReverse="False" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Rectangle.MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation
+                                    Storyboard.TargetName="rt" 
+                                    Storyboard.TargetProperty="Height"
+                                    From="0" To="100" Duration="0:0:0.5" 
+                                    AutoReverse="False" />
+                        <DoubleAnimation
+                                    Storyboard.TargetName="rt" 
+                                    Storyboard.TargetProperty="Width"
+                                    From="0" To="100" Duration="0:0:0.5" 
+                                    AutoReverse="False" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="Rectangle.KeyDown">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation
+                                    Storyboard.TargetName="rt" 
+                                    Storyboard.TargetProperty="Height"
+                                    From="0" To="100" Duration="0:0:0.5" 
+                                    AutoReverse="False" />
+                        <DoubleAnimation
+                                    Storyboard.TargetName="rt" 
+                                    Storyboard.TargetProperty="Width"
+                                    From="0" To="100" Duration="0:0:0.5" 
+                                    AutoReverse="False" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="">
+                <Setter TargetName="rt" Property="Fill" Value="#CCC0B2" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="2">
+                <Setter TargetName="rt" Property="Fill" Value="#EEE4DA" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="4">
+                <Setter TargetName="rt" Property="Fill" Value="#ECE0C8" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="8">
+                <Setter TargetName="rt" Property="Fill" Value="#F2B179" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="16">
+                <Setter TargetName="rt" Property="Fill" Value="#F59563" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="32">
+                <Setter TargetName="rt" Property="Fill" Value="#F57C5F" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="64">
+                <Setter TargetName="rt" Property="Fill" Value="#F65D3B" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="128">
+                <Setter TargetName="rt" Property="Fill" Value="#EDCE71" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="256">
+                <Setter TargetName="rt" Property="Fill" Value="#EDCC61" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="512">
+                <Setter TargetName="rt" Property="Fill" Value="#ECC850" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="1024">
+                <Setter TargetName="rt" Property="Fill" Value="#EDC542" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="2048">
+                <Setter TargetName="rt" Property="Fill" Value="#E0BA01" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="4096">
+                <Setter TargetName="rt" Property="Fill" Value="#DE4905" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="SettingButton" TargetType="ui:ImageButton">
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Rectangle Name="rt" Height="70" Width="250">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="{Binding ImagePath, RelativeSource={RelativeSource TemplatedParent}}" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Name="tbk" Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <EventTrigger RoutedEvent="Rectangle.MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation
+                                    Storyboard.TargetName="rt" 
+                                    Storyboard.TargetProperty="Height"
+                                    From="70" To="75" Duration="0:0:0.2" 
+                                    AutoReverse="False" />
+                        <DoubleAnimation
+                                    Storyboard.TargetName="rt" 
+                                    Storyboard.TargetProperty="Width"
+                                    From="250" To="255" Duration="0:0:0.2" 
+                                    AutoReverse="False" />
+                        <DoubleAnimation
+                                    Storyboard.TargetName="tbk" 
+                                    Storyboard.TargetProperty="FontSize"
+                                    From="25" To="30" Duration="0:0:0.2" 
+                                    AutoReverse="False" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Rectangle.MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation
+                                    Storyboard.TargetName="rt" 
+                                    Storyboard.TargetProperty="Height"
+                                    From="75" To="70" Duration="0:0:0.2" 
+                                    AutoReverse="False" />
+                        <DoubleAnimation
+                                    Storyboard.TargetName="rt" 
+                                    Storyboard.TargetProperty="Width"
+                                    From="255" To="250" Duration="0:0:0.2" 
+                                    AutoReverse="False" />
+                        <DoubleAnimation
+                                    Storyboard.TargetName="tbk" 
+                                    Storyboard.TargetProperty="FontSize"
+                                    From="30" To="25" Duration="0:0:0.2" 
+                                    AutoReverse="False" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Show" TargetType="ui:ImageButton">
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Rectangle Height="40" Width="130">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="{Binding ImagePath, RelativeSource={RelativeSource TemplatedParent}}" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Name="tbk" Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="tbk" Property="FontSize" Value="20" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="UserInfo" TargetType="ui:ImageButton">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Rectangle Height="32" Width="32">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="{Binding ImagePath, RelativeSource={RelativeSource TemplatedParent}}" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBox Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </StackPanel>
+        <ControlTemplate.Resources>
+            <Style TargetType="TextBox">
+                <Setter Property="Height" Value="40" />
+                <Setter Property="Width" Value="150" />
+            </Style>
+        </ControlTemplate.Resources>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Score" TargetType="ui:ImageButton">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Rectangle Height="150" Width="150">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="{Binding ImagePath, RelativeSource={RelativeSource TemplatedParent}}" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="好厉害！您的最高得分是：" FontSize="25" />
+                <TextBlock Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" Margin="20" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </StackPanel>
+        </StackPanel>
+    </ControlTemplate>
+    
+</ResourceDictionary>
