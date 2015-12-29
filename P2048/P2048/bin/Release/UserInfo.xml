@@ -1,12 +1,12 @@
 <?xml version="1.0" standalone="yes"?>
 <LUserInfoDataSet xmlns="http://tempuri.org/LUserInfoDataSet.xsd">
   <userinfo_t>
-    <Id>2015-12-28 09:52:54.428611</Id>
+    <Id>0</Id>
     <Name>陈国栋</Name>
-    <Email>410282618@qq.com</Email>
-    <Phono>18866348205</Phono>
-    <Office>student</Office>
-    <MaxScore>116</MaxScore>
+    <Email>Email</Email>
+    <Phono>Phono</Phono>
+    <Office>Office</Office>
+    <MaxScore>1044</MaxScore>
     <Flag>true</Flag>
   </userinfo_t>
 </LUserInfoDataSet>

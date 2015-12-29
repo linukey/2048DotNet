@@ -223,54 +223,43 @@ namespace P2048
         //判断游戏是否失败
         private bool CheckFalse()
         {
-            //满足两个条件：1.键盘全满 2.相邻两个之间没有相同的(BFS搜索一下即可)
-            
+            //满足两个条件：1.键盘全满 2.相邻两个之间没有相同的(BFS搜索一下即可)    
             bool[,] flag = new bool[4, 4];
-
-            for (int i = 0; i < 4; i++)
-                for (int j = 0; j < 4; j++)
-                {
-                    if (board[i, j].Text == "")
-                        return false;
-                    flag[i, j] = false;
-                }
-
+            int cnt = 0;
             Queue q = new Queue();
             q.Enqueue(new Pos(0, 0));
 
             while(q.Count != 0)
             {
                 Pos p = (Pos)q.Dequeue();
+                if (board[p.X, p.Y].Text == "") return false;
+                cnt++;
+                flag[p.X, p.Y] = true;
                 if(p.X+1 < 4 && !flag[p.X+1,p.Y])
                 {
                     if (board[p.X, p.Y].Text == board[p.X + 1, p.Y].Text) return false;
                     q.Enqueue(new Pos(p.X + 1, p.Y));
-                    flag[p.X + 1, p.Y] = true;
                 }
                 if (p.X - 1 >= 0 && !flag[p.X - 1, p.Y])
                 {
                     if (board[p.X, p.Y].Text == board[p.X - 1, p.Y].Text) return false;
                     q.Enqueue(new Pos(p.X + 1, p.Y));
-                    flag[p.X - 1, p.Y] = true;
                 }
                 if (p.Y + 1 < 4 && !flag[p.X, p.Y + 1])
                 {
                     if (board[p.X, p.Y].Text == board[p.X, p.Y + 1].Text) return false;
                     q.Enqueue(new Pos(p.X, p.Y + 1));
-                    flag[p.X, p.Y + 1] = true;
                 }
                 if (p.Y - 1 >= 0 && !flag[p.X, p.Y - 1])
                 {
                     if (board[p.X, p.Y].Text == board[p.X, p.Y - 1].Text) return false;
                     q.Enqueue(new Pos(p.X, p.Y - 1));
-                    flag[p.X, p.Y - 1] = true;
                 }
             }
-
+            if (cnt < 16) return false;
             return true;
         }
 
         #endregion
-
     }
 }

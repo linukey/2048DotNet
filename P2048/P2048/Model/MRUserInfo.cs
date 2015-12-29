@@ -46,8 +46,8 @@
             set { mMaxScore = value; }
         }
 
-        private int mUid;
-        public int MUid
+        private string mUid;
+        public string MUid
         {
             get { return mUid; }
             set { mUid = value; }

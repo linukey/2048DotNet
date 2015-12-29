@@ -420,10 +420,10 @@ public partial class LUserInfoDataSet : global::System.Data.DataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public userinfo_tRow Adduserinfo_tRow(string Name, string Email, string Phono, string Office, string MaxScore, bool Flag) {
+        public userinfo_tRow Adduserinfo_tRow(string Id, string Name, string Email, string Phono, string Office, string MaxScore, bool Flag) {
             userinfo_tRow rowuserinfo_tRow = ((userinfo_tRow)(this.NewRow()));
             object[] columnValuesArray = new object[] {
-                    null,
+                    Id,
                     Name,
                     Email,
                     Phono,
@@ -470,7 +470,7 @@ public partial class LUserInfoDataSet : global::System.Data.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
+            this.columnId = new global::System.Data.DataColumn("Id", typeof(string), null, global::System.Data.MappingType.Element);
             base.Columns.Add(this.columnId);
             this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
             base.Columns.Add(this.columnName);
@@ -484,9 +484,7 @@ public partial class LUserInfoDataSet : global::System.Data.DataSet {
             base.Columns.Add(this.columnMaxScore);
             this.columnFlag = new global::System.Data.DataColumn("Flag", typeof(bool), null, global::System.Data.MappingType.Element);
             base.Columns.Add(this.columnFlag);
-            this.columnId.AutoIncrement = true;
             this.columnId.AllowDBNull = false;
-            this.columnId.ReadOnly = true;
             this.columnName.AllowDBNull = false;
             this.columnEmail.AllowDBNull = false;
             this.columnPhono.AllowDBNull = false;
@@ -635,9 +633,9 @@ public partial class LUserInfoDataSet : global::System.Data.DataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public int Id {
+        public string Id {
             get {
-                return ((int)(this[this.tableuserinfo_t.IdColumn]));
+                return ((string)(this[this.tableuserinfo_t.IdColumn]));
             }
             set {
                 this[this.tableuserinfo_t.IdColumn] = value;

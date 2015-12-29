@@ -42,6 +42,7 @@ namespace P2048.UI
         {
             ds = new LUserInfoDataSet();
             DataRow row = ds.Tables["userinfo_t"].NewRow();//写入本地数据源
+            row["Id"] = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss.ffffff");
             row["Name"] = "用户名";
             row["Email"] = "Email";
             row["Phono"] = "Phono";
@@ -57,7 +58,7 @@ namespace P2048.UI
             m.MPhono = "Phono";
             m.MOffice = "Office";
             m.MMaxScore = "0";
-            m.MUid = Convert.ToInt32(ds.Tables["userinfo_t"].Rows[0]["Id"]);
+            m.MUid = ds.Tables["userinfo_t"].Rows[0]["Id"].ToString();
             new RUserInfoBLL().Add(m).ToString();
         }
 
@@ -99,7 +100,7 @@ namespace P2048.UI
                     m.MPhono = row["Phono"].ToString();
                     m.MOffice = row["Office"].ToString();
                     m.MMaxScore = row["MaxScore"].ToString();
-                    m.MUid = Convert.ToInt32(row["Id"]);
+                    m.MUid = row["Id"].ToString();
                     if (new RUserInfoBLL().Update(m)) //更新成功才修改Flag标示列，不然的话不修改，下次继续尝试修改
                     {
                         row["Flag"] = false;

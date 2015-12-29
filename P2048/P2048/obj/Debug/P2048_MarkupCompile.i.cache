@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Administrator\Desktop\P2048\P2048\obj\Debug\
+C:\Users\Administrator\Desktop\2048DotNet\P2048\P2048\obj\Debug\
 P2048
 none
 false
 DEBUG;TRACE
-C:\Users\Administrator\Desktop\P2048\P2048\App.xaml
+C:\Users\Administrator\Desktop\2048DotNet\P2048\P2048\App.xaml
 5-1756222746
 
 191862549155
 14598183689
 Resources\Dictionary.xaml;MainWindow.xaml;UI\MaxScore.xaml;UI\Setting.xaml;UI\UserInfo.xaml;
 
-True
+False
 

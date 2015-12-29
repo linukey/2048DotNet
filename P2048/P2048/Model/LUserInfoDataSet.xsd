@@ -9,7 +9,7 @@
   <xs:element name="userinfo_t">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+        <xs:element name="Id"  type="xs:string" />
         <xs:element name="Name" type="xs:string" />
         <xs:element name="Email" type="xs:string" />
         <xs:element name="Phono" type="xs:string" />

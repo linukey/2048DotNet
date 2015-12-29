@@ -194,7 +194,7 @@
                     <ImageBrush ImageSource="{Binding ImagePath, RelativeSource={RelativeSource TemplatedParent}}" />
                 </Rectangle.Fill>
             </Rectangle>
-            <TextBox Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBox Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </StackPanel>
         <ControlTemplate.Resources>
             <Style TargetType="TextBox">
